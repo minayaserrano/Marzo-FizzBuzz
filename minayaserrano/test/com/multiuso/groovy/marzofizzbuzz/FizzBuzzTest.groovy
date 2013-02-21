@@ -19,4 +19,19 @@ class FizzBuzzTest extends GroovyTestCase {
         
         assertEquals(2, new FizzBuzz().say(2))
     }
+
+    void testThreeSayFizz() {
+
+        assertEquals('Fizz', new FizzBuzz().say(3))
+    }
+
+    void testFiveSayBuzz() {
+
+        assertEquals('Buzz', new FizzBuzz().say(5))
+    }
+
+    void testSixSayFizz() {
+
+        assertEquals('Fizz', new FizzBuzz().say(6))
+    }
 }
