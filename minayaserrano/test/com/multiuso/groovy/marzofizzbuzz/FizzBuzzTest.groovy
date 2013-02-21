@@ -12,7 +12,11 @@ class FizzBuzzTest extends GroovyTestCase {
         def expected = 1
         def actual   = new FizzBuzz();
 
-        assertEquals(expected, actual.say())
+        assertEquals(expected, actual.say(1))
     }
 
+    void testTwoSayTwo() {
+        
+        assertEquals(2, new FizzBuzz().say(2))
+    }
 }
