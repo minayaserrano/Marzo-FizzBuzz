@@ -4,34 +4,26 @@ import groovy.util.GroovyTestCase
 import com.multiuso.groovy.marzofizzbuzz.FizzBuzz
 
 class FizzBuzzTest extends GroovyTestCase {
+
+    def fizzBuzz = new FizzBuzz()
+    def values = [  1 : 1,
+                    2 : 2,
+                    3 : 'Fizz',
+                    4 : 4,
+                    5 : 'Buzz',
+                    6 : 'Fizz',
+                    7 : 7,
+                 ]
+
     void testFramework() {
         assertTrue(true)
     }
 
-    void testOneSayOne() {
-        def expected = 1
-        def actual   = new FizzBuzz();
-
-        assertEquals(expected, actual.say(1))
-    }
-
-    void testTwoSayTwo() {
+    void testAllSayTheCorrect() {
         
-        assertEquals(2, new FizzBuzz().say(2))
+        values.keySet().each( {
+            assertEquals(values[it], fizzBuzz.say(it))
+        })
     }
 
-    void testThreeSayFizz() {
-
-        assertEquals('Fizz', new FizzBuzz().say(3))
-    }
-
-    void testFiveSayBuzz() {
-
-        assertEquals('Buzz', new FizzBuzz().say(5))
-    }
-
-    void testSixSayFizz() {
-
-        assertEquals('Fizz', new FizzBuzz().say(6))
-    }
 }
