@@ -5,22 +5,32 @@ class FizzBuzz {
 
     def say(number) {
 
-        if ((number % 3 == 0 && number % 5 == 0) ||
-            (number % 3 == 0 && number ==~ /\d*5\d*/) ||
-            (number % 5 == 0 && number ==~ /\d*3\d*/) ||
-            (number ==~ /\d*3\d*/ && number ==~ /\d*5\d*/)) {
+        if ((multiple(number, 3) && multiple(number, 5)) ||
+            (multiple(number, 3) && contains(number, 5)) ||
+            (multiple(number, 5) && contains(number, 3)) ||
+            (contains(number, 3) && contains(number, 5))) {
             return 'FizzBuzz?'
         }
 
-        if (number % 3 == 0 || number ==~ /\d*3\d*/) {
+        if (multiple(number, 3) || contains(number, 3)) {
             return 'Fizz'
         }
 
-        if (number % 5 == 0 || number ==~ /\d*5\d*/) {
+        if (multiple(number, 5) || contains(number, 5)) {
             return 'Buzz'
         }
         
         return number
+    }
+
+    def multiple(number, multiple) {
+        
+        return number % multiple == 0
+    }
+
+    def contains(number, contain) {
+
+        return number ==~ /\d*${contain}\d*/
     }
 
     String toString() {
