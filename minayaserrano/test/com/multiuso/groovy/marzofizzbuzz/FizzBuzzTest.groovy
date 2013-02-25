@@ -13,7 +13,15 @@ class FizzBuzzTest extends GroovyTestCase {
                     5 : 'Buzz',
                     6 : 'Fizz',
                     7 : 7,
-                    15: 'FizzBuzz?'
+                    15: 'FizzBuzz?',
+                    31: 'Fizz',
+                    35: 'FizzBuzz?',
+                    43: 'Fizz',
+                    45: 'FizzBuzz?',
+                    51: 'FizzBuzz?',
+                    52: 'Buzz',
+                    53: 'FizzBuzz?',
+                    54: 'FizzBuzz?'
                  ]
 
     void testFramework() {
